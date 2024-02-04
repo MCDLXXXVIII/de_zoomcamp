@@ -1,1 +1,8 @@
 .idea/
+__pycache__/
+
+keys/
+**/*.env
+
+.file_versions/
+.ssh_tunnel/
