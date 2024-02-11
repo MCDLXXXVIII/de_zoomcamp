@@ -1,0 +1,13 @@
+version: '3'
+services:
+  magic:
+    image: mageai/mageai:latest
+    command: mage start /data_processing
+    env_file:
+      - .env
+    ports:
+      - 6789:6789
+    volumes:
+      - ./data_processing:/data_processing
+      - ${GCP_CREDENTIALS_PATH}:/data_processing/keys/credentials.json
+    restart: on-failure:5
